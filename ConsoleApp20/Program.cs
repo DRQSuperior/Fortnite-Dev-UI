@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ConsoleApp20;
 
 namespace ConsoleApp20
 {
@@ -23,45 +24,56 @@ namespace ConsoleApp20
                 string option = Console.ReadLine();
                 if (option == "")
                 {
-                    log("You didnt select a option!");
+                    function.log("You didnt select a option!");
                     Thread.Sleep(1000);
                     restartoptions();
                 }
                 if (option == "1")
                 {
-                    log("You Picked "+option);
-                    launch();
+                    function.log("You Picked "+option);
+                    function.launch();
                     Thread.Sleep(2000);
                     restartoptions();
                 }
                 if (option == "2")
                 {
-                    log("You Picked "+option);
-                    verify();
+                    function.log("You Picked "+option);
+                    function.verify();
                     Thread.Sleep(2000);
                     restartoptions();
                 }
                 if (option == "3")
                 {
-                    log("You Picked "+option);
-                    update();
+                    function.log("You Picked "+option);
+                    function.update();
                     Thread.Sleep(2000);
                     restartoptions();
                 }
                 if (option == "4")
                 {
-                    log("You Picked "+option);
-                    settings();
+                    function.log("You Picked "+option);
+                    function.settings();
                     Thread.Sleep(2000);
                     restartoptions();
                 }
                 if (option == "5")
                 {
-                    log("You Picked "+option);
-                    exit();
+                    function.log("You Picked "+option);
+                    function.exit();
                     Thread.Sleep(2000);
                     restartoptions();
                 }
+            }
+
+            void loadoptions()
+            {
+                function.log("Please Select A Option\n\n");
+                function.log("1. Launch");
+                function.log("2. Verify");
+                function.log("3. Update");
+                function.log("4. Settings");
+                function.log("5. Exit");
+                optionhandler();
             }
 
             void loadmain()
@@ -84,72 +96,22 @@ namespace ConsoleApp20
                 loadoptions();
             }
 
-            void launch()
+            for (int i = 0; i < 5; i++)
             {
-
-            }
-
-            void verify()
-            {
-
-            }
-
-            void update()
-            {
-
-            }
-
-            void settings()
-            {
-
-            }
-
-            void exit()
-            {
-                log("Exiting!");
-                Thread.Sleep(2000);
-                Environment.Exit(0);
-            }
-
-            void loadoptions()
-            {
-                log("Please Select A Option\n\n");
-                log("1. Launch");
-                log("2. Verify");
-                log("3. Update");
-                log("4. Settings");
-                log("5. Exit");
-                optionhandler();
-            }
-
-            void log(string message)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Write("[");
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.Write("+");
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Write("] ");
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.Write(message+"\n");
-            }
-
-            for (int i = 0; i < 1; i++)
-            {
-                log("Loading.");
+                function.log("Loading.");
                 Console.Title = "Loading.";
                 Thread.Sleep(500);
                 Console.Clear();
-                log("Loading..");
+                function.log("Loading..");
                 Console.Title = "Loading..";
                 Thread.Sleep(500);
                 Console.Clear();
-                log("Loading...");
+                function.log("Loading...");
                 Console.Title = "Loading...";
                 Thread.Sleep(500);
                 Console.Clear();
             }
-            log("Finished Loading!");
+            function.log("Finished Loading!");
             Console.Title = "Finished Loading!";
             Thread.Sleep(2000);
             Console.Clear();
